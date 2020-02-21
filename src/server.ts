@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import { requireAuth, generateJWT } from './auth';
 
 (async () => {
 
@@ -39,13 +40,15 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     res.send("try GET /filteredimage?image_url={{}}")
   } );
 
-  app.get('/filteredimage', async (req, res) => {
+  app.get('/filteredimage',
+  requireAuth,
+  async (req, res) => {
     const image_url = req.query.image_url;
     let getImagePath = '';
 
     if (isImageUrl(image_url)){
       
-      getImagePath = await filterImageFromURL(image_url);      
+      getImagePath = await filterImageFromURL(image_url);
 
     } else {
       // console.log('Not valid!')
@@ -58,6 +61,17 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       res.status(500).send('Error writing the file!');
     })
   });
+
+  app.post('/login',
+  async ( req, res ) => {
+
+    //Mock User
+    const username: string = 'udagr@m';
+    const getjwttoken = generateJWT(username);
+
+    res.status(200).send({ auth: true, token: getjwttoken });
+  });
+
 
   // Start the Server
   app.listen( port, () => {
