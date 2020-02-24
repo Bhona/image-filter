@@ -48,4 +48,4 @@ http://imagefilter.devbhona.com/?image_url=https://images.pexels.com/photos/3962
 
 Please call the http://imagefilter.devbhona.com/login to get the token.
 
-the image filter endpoint use the bearer <token> for Authorization.
+the image filter endpoint use the Bearer Token for Authorization.
