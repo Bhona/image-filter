@@ -45,3 +45,7 @@ Prevent requests without valid authentication headers.
 ### Custom Domain Name
 
 http://imagefilter.devbhona.com/?image_url=https://images.pexels.com/photos/39629/tiger-tiger-baby-tigerfamile-young-39629.jpeg
+
+Please call the http://imagefilter.devbhona.com/login to get the token.
+
+the image filter endpoint use the bearer <token> for Authorization.
