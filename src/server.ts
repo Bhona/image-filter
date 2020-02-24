@@ -1,7 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
-import { requireAuth, generateJWT } from './auth';
+// import { requireAuth, generateJWT } from './auth';
+
+const { requireAuth, generateJWT } = require('./auth');
 
 (async () => {
 

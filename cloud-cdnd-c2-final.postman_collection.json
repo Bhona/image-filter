@@ -6,12 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8082/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+			"name": "http://localhost:8082/filteredimage?image_url=https://images.pexels.com/photos/39629/tiger-tiger-baby-tigerfamile-young-39629.jpeg",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+					"raw": "http://{{HOST}}/filteredimage?image_url=https://images.pexels.com/photos/39629/tiger-tiger-baby-tigerfamile-young-39629.jpeg",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
@@ -22,8 +22,26 @@
 					"query": [
 						{
 							"key": "image_url",
-							"value": "https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg"
+							"value": "https://images.pexels.com/photos/39629/tiger-tiger-baby-tigerfamile-young-39629.jpeg"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/login",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"login"
 					]
 				}
 			},
